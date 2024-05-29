@@ -1,0 +1,22 @@
+Sub AddTransaction()
+    Dim ws As Worksheet
+    Set ws = ThisWorkbook.Sheets("Transactions")
+
+    Dim lastRow As Long
+    lastRow = ws.Cells(ws.Rows.Count, 1).End(xlUp).Row + 1
+
+    Dim date As String
+    date = InputBox("Enter the date (YYYY-MM-DD):")
+
+    Dim category As String
+    category = InputBox("Enter the category:")
+
+    Dim amount As Double
+    amount = InputBox("Enter the amount:")
+
+    ws.Cells(lastRow, 1).Value = date
+    ws.Cells(lastRow, 2).Value = category
+    ws.Cells(lastRow, 3).Value = amount
+
+    MsgBox "Transaction added successfully!"
+End Sub
